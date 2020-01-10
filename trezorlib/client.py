@@ -1193,10 +1193,13 @@ class ProtocolMixin(object):
 
         # TREZORv2 method
         if isinstance(resp, proto.FirmwareRequest):
-            import pyblake2
+            try:
+                from hashlib import blake2s
+            except ImportError:
+                from pyblake2 import blake2s
             while True:
                 payload = data[resp.offset:resp.offset + resp.length]
-                digest = pyblake2.blake2s(payload).digest()
+                digest = blake2s(payload).digest()
                 resp = self.call(proto.FirmwareUpload(payload=payload, hash=digest))
                 if isinstance(resp, proto.FirmwareRequest):
                     continue
