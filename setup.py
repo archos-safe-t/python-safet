@@ -13,7 +13,7 @@ install_requires = [
     'mnemonic>=0.17',
     'requests>=2.4.0',
     'click>=6.2',
-    'pyblake2>=0.9.3',
+    "pyblake2>=0.9.3 ; python_version<'3.6'",
 ]
 
 import sys
