@@ -1,4 +1,10 @@
 The changelog format is bound to change as we figure out a way to autogenerate it.
+## version 0.1.5
+cleanup imports, improve Python 3.6+ support
+add Bitcore BTX support
+add Groestlcoin support
+fix changing language
+
 ## version 0.1.4
 Add preblock_hash in transaction message for BCD support
 
